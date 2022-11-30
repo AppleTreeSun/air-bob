@@ -1,23 +1,20 @@
 import React, { memo } from 'react'
-import { useSelector, shallowEqual, useDispatch } from 'react-redux';
+import AppFooter from './components/app-footer';
+import AppHeader from './components/app-header';
 
-import { addCount } from './store';
+import { useRoutes } from 'react-router-dom';
+import routes from '@/router';
+
 
 const App = memo(() => {
 
-  const { count } = useSelector(state => ({
-    count: state.home.count
-  }), shallowEqual)
-
-  const dispatch = useDispatch()
-
-  const increment = () => dispatch(addCount(10))
-
   return (
-    <div>
-      <h2>App组件</h2>
-      <h2>{count}</h2>
-      <button onClick={() => increment()}>+10</button>
+    <div className='app'>
+      <AppHeader/>
+      <div className="pages">
+        { useRoutes(routes) }
+      </div>
+      <AppFooter/>
     </div>
   )
 })
