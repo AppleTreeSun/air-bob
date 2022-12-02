@@ -15,3 +15,5 @@ export default new HrRequest({
     }
   }
 })
+
+export * from './modules/home'

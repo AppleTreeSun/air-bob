@@ -2,7 +2,12 @@ import styled from "styled-components";
 
 
 
-export const HeaderWrap = styled.div`
-  text-align: center;
-  font-size: 32px;
+export const HeaderStyle = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  height: 80px;
+  
+  border-bottom: 1px solid #eee;
 `
