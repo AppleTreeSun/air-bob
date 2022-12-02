@@ -1,14 +1,18 @@
 import React, { memo } from "react";
 import SectionHeader from "@/components/section-header";
 
+import { SectionStyle } from "./style";
+import SectionContent from "@/components/section-content";
+
 const SectionCol4 = memo((props) => {
 
   const { sectionData } = props
 
   return (
-    <SectionCol4>
-      <SectionHeader title={sectionData?.title} subtitle={sectionData?.subtitle}/>
-    </SectionCol4>
+    <SectionStyle>
+      <SectionHeader title={sectionData.title}/>
+      <SectionContent roomlist={sectionData.list}/>
+    </SectionStyle>
   );
 });
 
