@@ -1,7 +1,10 @@
 import RoomItem from "@/components/room-item";
-import React, { memo, useState, useEffect } from "react";
-import { shallowEqual, useSelector } from 'react-redux'
+import React, { memo, useState, useEffect, useCallback } from "react";
+import { shallowEqual, useDispatch, useSelector } from 'react-redux'
+import { useNavigate } from 'react-router-dom';
 import _ from 'lodash'
+
+import { setDetailInfoAction } from '@/store';
 
 import { ContentStyle } from "./style";
 
@@ -55,6 +58,17 @@ const EntireContent = memo(() => {
     console.log('房子点击：', item);
   }
 
+  const dispatch = useDispatch()
+  const navigate = useNavigate()
+  const handleItemClick = useCallback((item) => {
+    console.log('房子的详情数据：', item);
+
+    dispatch(setDetailInfoAction(item))
+
+    navigate('/detail')
+
+  }, [navigate, dispatch])
+
   return (
     <ContentStyle>
       { !!totalCount && <h2 className="title">共{totalCount}处住所</h2> }
@@ -65,6 +79,7 @@ const EntireContent = memo(() => {
               <RoomItem 
                 roomItem={item} 
                 itemWidth={itemWidth} 
+                itemClick={handleItemClick}
                 key={item._id}
                 onClick={() => roomClick(item)}
               />
