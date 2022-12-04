@@ -8,7 +8,7 @@ class HrRequest {
 
     // 全局的请求拦截器
     this.instance.interceptors.request.use(config => {
-      console.log('全局的请求拦截器-请求成功');
+      // console.log('全局的请求拦截器-请求成功');
       return config
     }, err => {
       console.log('全局的请求拦截器-请求失败');
@@ -16,7 +16,7 @@ class HrRequest {
     })
 
     this.instance.interceptors.response.use(response => {
-      console.log('全局的响应拦截器-响应成功');
+      // console.log('全局的响应拦截器-响应成功');
       return response.data
     }, err => {
       console.log('全局的响应拦截器-响应失败');

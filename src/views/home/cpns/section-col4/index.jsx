@@ -3,6 +3,7 @@ import SectionHeader from "@/components/section-header";
 
 import { SectionStyle } from "./style";
 import SectionContent from "@/components/section-content";
+import SectionFooter from "@/components/section-footer";
 
 const SectionCol4 = memo((props) => {
 
@@ -10,8 +11,9 @@ const SectionCol4 = memo((props) => {
 
   return (
     <SectionStyle>
-      <SectionHeader title={sectionData.title}/>
+      <SectionHeader title={sectionData.title} subtitle={sectionData.subtitle} />
       <SectionContent roomlist={sectionData.list}/>
+      <SectionFooter/>
     </SectionStyle>
   );
 });

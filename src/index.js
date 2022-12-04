@@ -14,15 +14,15 @@ import 'normalize.css';
 const root = ReactDOM.createRoot(document.querySelector("#root"))
 
 root.render(
-  <StrictMode>
-    <Provider store={store}>
-      <ThemeProvider theme={theme}>
-        <Suspense fallback={<h2>Loading... </h2>}>
-          <HashRouter>
-            <App />
-          </HashRouter>
-        </Suspense>
-      </ThemeProvider>
-    </Provider>
-  </StrictMode>
+  // <StrictMode>
+  <Provider store={store}>
+    <ThemeProvider theme={theme}>
+      <Suspense fallback={<h2>Loading... </h2>}>
+        <HashRouter>
+          <App />
+        </HashRouter>
+      </Suspense>
+    </ThemeProvider>
+  </Provider>
+  // </StrictMode>
 )

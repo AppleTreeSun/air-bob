@@ -9,13 +9,23 @@ export const RoomItemStyle = styled.div.attrs({
   box-sizing: border-box;
   padding: 8px;
   width: ${props => props.roomItemWidth};
+  flex-shrink: 0;
 
   .album {
+    position: relative;
     padding-top: 66.6%;
-    background-color: red;
-    /* img {
+    /* background-color: red; */
+    cursor: pointer;
+    border-radius: 3px;
+    overflow: hidden;
+
+    img {
+      position: absolute;
+      top: 0;
       width: 100%;
-    } */
+      height: 100%;
+      object-fit: cover;
+    }
   }
 
   .desc {
@@ -28,6 +38,8 @@ export const RoomItemStyle = styled.div.attrs({
   .name {
     font-size: 16px;
     font-weight: 700;
+
+    cursor: pointer;
 
     ${props => props.theme.mixin.doubleLine}
   }
