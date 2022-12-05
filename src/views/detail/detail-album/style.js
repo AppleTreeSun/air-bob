@@ -3,6 +3,8 @@ import styled from "styled-components";
 
 
 export const AlbumStyle = styled.div`
+  position: relative;
+
   > .album {
     display: flex;
     height: 600px;
@@ -108,4 +110,17 @@ export const AlbumStyle = styled.div`
     }
     
   }
+
+  .show-btn {
+    position: absolute;
+    z-index: 99;
+    right: 15px;
+    bottom: 15px;
+    line-height: 22px;
+    padding: 6px 15px;
+    background-color: #fff;
+    cursor: pointer;
+    border-radius: 4px;
+  }
+
 `

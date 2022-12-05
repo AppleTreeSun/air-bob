@@ -4,6 +4,14 @@ import styled from "styled-components";
 
 
 export const FilterStyle = styled.div`
+
+  position: fixed;
+  top: 81px;
+  left: 0;
+  right: 0;
+
+  z-index: 999;
+
   display: flex;
   align-items: center;
   height: 48px;

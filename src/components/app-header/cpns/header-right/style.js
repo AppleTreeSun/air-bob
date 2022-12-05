@@ -2,20 +2,23 @@ import styled from "styled-components";
 
 
 export const RightStyle = styled.div`
+  flex: 1;
   display: flex;
-  color: ${props => props.theme.text.primaryColor};
+  justify-content: flex-end;
+  color: ${props => props.theme.isAlpha ? '#fff' : props.theme.text.primaryColor};
   font-weight: 600;
 
   .btns {
     display: flex;
     align-items: center;
+    color: ${props => props.theme.isAlpha ? '#fff' : props.theme.text.primaryColor};
 
     .btn {
       padding: 12px 15px;
       cursor: pointer;
 
       &:hover {
-        background-color: #f5f5f5;
+        background-color: ${props => props.theme.isAlpha ? 'rgba(255,255,255,.1)' : props.theme.text.primaryColor};
         border-radius: 22px;
       }
     }
@@ -23,6 +26,10 @@ export const RightStyle = styled.div`
 
   .profile {
     position: relative;
+    /* color: ${props => props.theme.isAlpha ? '#fff' : props.theme.text.primaryColor}; */
+    color: ${props => props.theme.text.primaryColor};
+
+    background-color: #fff;
 
     display: flex;
     align-items: center;

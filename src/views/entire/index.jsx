@@ -1,31 +1,27 @@
 import React, { memo, useEffect } from "react";
-import { useDispatch } from 'react-redux'
-import { fetchEntireDataAction } from '@/store'
+import { useDispatch } from "react-redux";
+import { fetchEntireDataAction, setHeaderConfigAction } from "@/store";
 
 import EntireContent from "./cpns/entire-content";
 import EntireFilter from "./cpns/entire-filter";
 import EntirePagnition from "./cpns/entire-pagination";
 import { EntireStyle } from "./style";
+// import AppHeader from "@/components/app-header";
 
 const Entire = memo(() => {
-
-  const dispatch = useDispatch()
+  const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(fetchEntireDataAction())
-  }, [dispatch])
+    dispatch(fetchEntireDataAction());
+    dispatch(setHeaderConfigAction({ isFixed: true, topAlpha: false }));
+  }, [dispatch]);
 
   return (
     <EntireStyle>
-      <div className="filter">
-        <EntireFilter/>
-      </div>
-      <div className="content">
-        <EntireContent/>
-      </div>
-      <div className="pagination">
-        <EntirePagnition/>
-      </div>
+      {/* <AppHeader/> */}
+      <EntireFilter />
+      <EntireContent />
+      <EntirePagnition />
     </EntireStyle>
   );
 });

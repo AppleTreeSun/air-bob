@@ -1,5 +1,4 @@
 import ReactDOM from 'react-dom/client';
-import { Suspense, StrictMode } from 'react';
 import { Provider } from 'react-redux';
 import { HashRouter } from 'react-router-dom';
 import { ThemeProvider } from 'styled-components';
@@ -14,15 +13,11 @@ import 'normalize.css';
 const root = ReactDOM.createRoot(document.querySelector("#root"))
 
 root.render(
-  // <StrictMode>
   <Provider store={store}>
     <ThemeProvider theme={theme}>
-      <Suspense fallback={<h2>Loading... </h2>}>
-        <HashRouter>
-          <App />
-        </HashRouter>
-      </Suspense>
+      <HashRouter>
+        <App />
+      </HashRouter>
     </ThemeProvider>
   </Provider>
-  // </StrictMode>
 )

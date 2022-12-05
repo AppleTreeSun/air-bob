@@ -1,6 +1,6 @@
 import React, { memo, useEffect } from "react";
 import { useSelector, useDispatch, shallowEqual } from "react-redux";
-import { fetchHomeDataAction } from "@/store";
+import { fetchHomeDataAction, setHeaderConfigAction } from "@/store";
 
 import { isEmptyObject } from "@/utils";
 
@@ -12,6 +12,7 @@ import SectionCol4 from "./cpns/section-col4";
 import SectionTab from './cpns/section-tab';
 import SectionLongFor from "./cpns/section-longfor";
 import SectionPlus from "./cpns/section-plus";
+// import AppHeader from "@/components/app-header";
 
 const Home = memo(() => {
   const { 
@@ -36,10 +37,12 @@ const Home = memo(() => {
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(fetchHomeDataAction());
+    dispatch(setHeaderConfigAction({ isFixed: true, topAlpha: true }))
   }, [dispatch]);
 
   return (
     <HomeStyle>
+      {/* <AppHeader/> */}
       <HomeBanner />
       <div className="content">
         {isEmptyObject(discount) && <SectionTab tabData={discount}/>}

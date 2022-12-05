@@ -18,7 +18,8 @@ const RoomItem = memo((props) => {
 
   const [selectIndex, setSelectIndex] = useState(0)
 
-  const handleArrowClick = isRight => {
+  const handleArrowClick = (e, isRight) => {
+    e.stopPropagation()
     // 上一个面板/下一个面板
     isRight ? swiperRef.current.next() : swiperRef.current.prev()
 
@@ -30,7 +31,9 @@ const RoomItem = memo((props) => {
     setSelectIndex(newIndex)
   }
 
-  const handleDotClick = index => {
+  const handleDotClick = (e, index) => {
+    e.stopPropagation()
+    
     swiperRef.current.goTo(index)
     setSelectIndex(index)
   }
@@ -44,10 +47,10 @@ const RoomItem = memo((props) => {
   const swiperFragment = (
     <div className="swiper">
       <div className="control">
-        <div className="arrow left" onClick={() => handleArrowClick(false)}>
+        <div className="arrow left" onClick={(e) => handleArrowClick(e, false)}>
           <IconArrowLeft width="30" height="30" />
         </div>
-        <div className="arrow right" onClick={() => handleArrowClick(true)}>
+        <div className="arrow right" onClick={(e) => handleArrowClick(e, true)}>
           <IconArrowRight width="30" height="30" />
         </div>
       </div>
@@ -57,7 +60,7 @@ const RoomItem = memo((props) => {
             roomItem.picture_urls &&
               roomItem.picture_urls.map((item, index) => {
                 return (
-                  <div className="dot-outer" key={index} onClick={() => handleDotClick(index)}>
+                  <div className="dot-outer" key={index} onClick={(e) => handleDotClick(e, index)}>
                     <span className={classNames("dot-inner", {
                       active: selectIndex === index
                     })}></span>

@@ -3,6 +3,7 @@ import styled from "styled-components";
 
 
 export const ContentStyle = styled.div`
+  margin-top: 109px;
   position: relative;
   padding: 40px 20px;
 
