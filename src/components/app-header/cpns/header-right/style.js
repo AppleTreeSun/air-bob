@@ -18,7 +18,7 @@ export const RightStyle = styled.div`
       cursor: pointer;
 
       &:hover {
-        background-color: ${props => props.theme.isAlpha ? 'rgba(255,255,255,.1)' : props.theme.text.primaryColor};
+        background-color: ${props => props.theme.isAlpha ? 'rgba(255,255,255,.3)' : '#f5f5f5'};
         border-radius: 22px;
       }
     }
@@ -59,7 +59,8 @@ export const RightStyle = styled.div`
       border-radius: 10px;
       box-shadow: 0 0 6px rgba(0,0,0,.2);
 
-      .top, .bottom {
+      > .top, .bottom {
+        display: block;
         padding: 10px 0;
 
         .item {
