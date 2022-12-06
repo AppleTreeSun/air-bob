@@ -8,6 +8,12 @@ const Detail = React.lazy(() => import("@/views/detail"))
 const NotFound = React.lazy(() => import("@/views/notfound"))
 const Lab = React.lazy(() => import("@/views/lab"))
 
+// import Home from '@/views/home'
+// import Entire from '@/views/entire'
+// import Detail from '@/views/detail'
+// import NotFound from '@/views/notfound'
+// import Lab from '@/views/lab'
+
 const routes = [
   {
     path: '/',

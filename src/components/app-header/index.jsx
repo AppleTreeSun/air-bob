@@ -16,14 +16,15 @@ const AppHeader = memo(() => {
   const [isSearch, setIsSearch] = useState(false);
 
   // 从redux中获取数据
-  const { headerConfig } = useSelector(
+  const { headerConfig, topAlpha } = useSelector(
     (state) => ({
       headerConfig: state.main.headerConfig,
+      topAlpha: state.main.headerConfig.topAlpha,
     }),
     shallowEqual
   );
 
-  const { isFixed, topAlpha } = headerConfig;
+  const { isFixed } = headerConfig;
 
   // 监听滚动
   const { scrollY } = useScrollPosition();

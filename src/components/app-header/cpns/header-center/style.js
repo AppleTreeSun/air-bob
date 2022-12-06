@@ -49,6 +49,7 @@ export const CenterStyle = styled.div`
 
   .search-detail {
     position: relative;
+    z-index: 9999;
 
     .search-panel {
       position: absolute;
